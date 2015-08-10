@@ -1,8 +1,8 @@
 package main
 
 import (
-"fmt"
-//"arduino"
+
+"arduino"
 
 )
 
@@ -10,9 +10,9 @@ import (
 
 func main() {
 
-fmt.Println("hola")
 
-	//	arduino.Action()
+
+		arduino.Action()
 
 
 }
