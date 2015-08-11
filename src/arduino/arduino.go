@@ -9,13 +9,15 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"runtime"
 )
 
 type fn func(int)
 
 var (
+	so						=map[string]string{ "windows":"COM3", "linux": "/dev/ttyACM0",}
 	gbot           = gobot.NewGobot()
-	firmataAdaptor = firmata.NewFirmataAdaptor("arduino", "COM3" /*"/dev/ttyACM0"*/)
+	firmataAdaptor = firmata.NewFirmataAdaptor("arduino", so[runtime.GOOS])
 	led4           = gpio.NewLedDriver(firmataAdaptor, "led", "4")
 	led5           = gpio.NewLedDriver(firmataAdaptor, "led", "5")
 	led6           = gpio.NewLedDriver(firmataAdaptor, "led", "6")
