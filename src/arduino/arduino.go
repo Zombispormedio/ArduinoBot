@@ -124,7 +124,7 @@ func choose(parts []string) {
 func Action() {
 
 	work := func() {
-		server_request.Advice()
+		//server_request.Advice()
 		gobot.Every(1*time.Second, func() {
 			res := server_request.Check()
 
