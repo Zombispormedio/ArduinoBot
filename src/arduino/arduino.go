@@ -15,7 +15,7 @@ type fn func(int)
 
 var (
 	gbot           = gobot.NewGobot()
-	firmataAdaptor = firmata.NewFirmataAdaptor("arduino", /*"COM3" */"/dev/ttyACM0")
+	firmataAdaptor = firmata.NewFirmataAdaptor("arduino", "COM3" /*"/dev/ttyACM0"*/)
 	led4           = gpio.NewLedDriver(firmataAdaptor, "led", "4")
 	led5           = gpio.NewLedDriver(firmataAdaptor, "led", "5")
 	led6           = gpio.NewLedDriver(firmataAdaptor, "led", "6")
@@ -122,6 +122,7 @@ func choose(parts []string) {
 func Action() {
 
 	work := func() {
+		server_request.Advice()
 		gobot.Every(1*time.Second, func() {
 			res := server_request.Check()
 

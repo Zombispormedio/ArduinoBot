@@ -2,3 +2,4 @@ node/
 src/git.eclipse.org/
 src/github.com/
 src/golang.org/
+run.sh

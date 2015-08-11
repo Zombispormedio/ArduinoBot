@@ -20,3 +20,7 @@ func  Check()(state *objects.Messages){
 
 return &m
 }
+
+func Advice(){
+  http.Get("https://maker.ifttt.com/trigger/arduino/with/key/hVFVQTeDT9jMuSJYkR8GOgPT0xBX9dwpa00vD4TRELG")
+}
