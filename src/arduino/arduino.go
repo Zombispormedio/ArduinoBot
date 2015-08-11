@@ -125,7 +125,7 @@ func Action() {
 
 	work := func() {
 		//server_request.Advice()
-		gobot.Every(0.5*time.Second, func() {
+		gobot.Every(500000000*time.Nanosecond, func() {
 			res := server_request.Check()
 switchAll(off)
 			if res.Data != nil {
