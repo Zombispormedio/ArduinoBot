@@ -127,7 +127,7 @@ func Action() {
 		//server_request.Advice()
 		gobot.Every(1*time.Second, func() {
 			res := server_request.Check()
-switchAll(off)
+
 			if res.Data != nil {
 				message := res.Data[0]
 				
